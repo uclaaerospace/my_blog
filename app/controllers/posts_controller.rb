@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @author = Author.first
   end
 
   def show
@@ -24,7 +25,7 @@ class PostsController < ApplicationController
 
    def update
     @post = Post.new(post_params)
-    @post.save
+    @post.update(post_params)
     redirect_to "/posts/#{@post.id}"
 
   end

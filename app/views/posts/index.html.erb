@@ -1,7 +1,22 @@
 <h1>My Blog</h1>
-<% @posts.each do |post| %>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <% @posts.each do |post| %>
  <p>ID：<%= post.id %></p>
  <p><a href= "/posts/<%= post.id %>/">タイトル：<%= post.title %></a></p>
  <p>本文：<%= post.body %></p>
+ <% end %>
+</div>
+  <div class="col-xs-6 col-md-4">
+     <h1>ブログ作者</h1>
+    <p><%= image_tag @author.image_url, width: 200  %></p>
+    <p>担当：<%= @author.name %></p>
+    <p>一言：<%= @author.description %></p>
+  </div>
+</div>
 
-<% end %>
+
+
+
+
